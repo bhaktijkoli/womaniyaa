@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
   <link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css"/>
   <link rel="stylesheet" type="text/css" href="/css/ionicons.min.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css"/>
   <link rel="stylesheet" type="text/css" href="/css/style.css"/>
   <link rel="icon" type="image/png" href="/images/logo.png" />
   @yield('css')

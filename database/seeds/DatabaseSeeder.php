@@ -20,5 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PermissionRoleTableSeeder::class);
         $this->call(SettingsTableSeeder::class);
         $this->call(UsersTableSeeder::class);
+        $this->call(HealthCategoriesTableSeeder::class);
+        $this->call(FoodCategoriesTableSeeder::class);
+        $this->call(FitnessCategoriesTableSeeder::class);
+        $this->call(YogaCategoriesTableSeeder::class);
     }
 }

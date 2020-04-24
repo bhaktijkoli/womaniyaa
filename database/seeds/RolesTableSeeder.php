@@ -19,19 +19,27 @@ class RolesTableSeeder extends Seeder
         \DB::table('roles')->insert(array (
             0 => 
             array (
-                'created_at' => '2020-04-23 20:30:13',
-                'display_name' => 'Administrator',
                 'id' => 1,
                 'name' => 'admin',
+                'display_name' => 'Administrator',
+                'created_at' => '2020-04-23 20:30:13',
                 'updated_at' => '2020-04-23 20:30:13',
             ),
             1 => 
             array (
-                'created_at' => '2020-04-23 20:30:13',
-                'display_name' => 'Normal User',
                 'id' => 2,
                 'name' => 'user',
+                'display_name' => 'Normal User',
+                'created_at' => '2020-04-23 20:30:13',
                 'updated_at' => '2020-04-23 20:30:13',
+            ),
+            2 => 
+            array (
+                'id' => 3,
+                'name' => 'editor',
+                'display_name' => 'Editor',
+                'created_at' => '2020-04-23 22:12:59',
+                'updated_at' => '2020-04-23 22:12:59',
             ),
         ));
         

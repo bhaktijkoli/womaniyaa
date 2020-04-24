@@ -38,6 +38,6 @@ class VoyagerCreateSeed extends Command
      */
     public function handle()
     {
-      Artisan::call('iseed data_types,data_rows,menus,menu_items,data_rows,roles,permissions,permission_role,settings --force');
+      Artisan::call('iseed data_types,data_rows,menus,menu_items,data_rows,roles,permissions,permission_role,settings,health_categories,food_categories,fitness_categories,yoga_categories --force');
     }
 }
