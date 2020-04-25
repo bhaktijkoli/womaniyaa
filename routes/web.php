@@ -19,6 +19,8 @@ Route::get('/health/{key}', 'HealthController@index')->name('health');
 Route::get('/health/{key}/{slug}', 'HealthController@show')->name('health.show');
 Route::get('/fitness/{key}', 'FitnessController@index')->name('fitness');
 Route::get('/fitness/{key}/{slug}', 'FitnessController@show')->name('fitness.show');
+Route::get('/food/{key}', 'FoodController@index')->name('food');
+Route::get('/food/{key}/{slug}', 'FoodController@show')->name('food.show');
 
 
 Route::group(['prefix' => 'admin'], function () {

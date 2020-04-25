@@ -29,8 +29,9 @@
             Food
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="{{route('home')}}">Immune Building Elements</a>
-            <a class="dropdown-item" href="{{route('home')}}">Recipes</a>
+            @foreach (App\FoodCategory::all() as $category)
+              <a class="dropdown-item" href="{{route('food', $category->key)}}">{{$category->name}}</a>
+            @endforeach
           </div>
         </li>
         <li class="nav-item dropdown">
