@@ -38,12 +38,9 @@
             Fitness
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="{{route('home')}}">Lower Body</a>
-            <a class="dropdown-item" href="{{route('home')}}">Upper Body</a>
-            <a class="dropdown-item" href="{{route('home')}}">Core</a>
-            <a class="dropdown-item" href="{{route('home')}}">Ployometrics</a>
-            <a class="dropdown-item" href="{{route('home')}}">Locomotion</a>
-            <a class="dropdown-item" href="{{route('home')}}">Cardio</a>
+            @foreach (App\FitnessCategory::all() as $category)
+              <a class="dropdown-item" href="{{route('fitness', $category->key)}}">{{$category->name}}</a>
+            @endforeach
           </div>
         </li>
         <li class="nav-item dropdown">
