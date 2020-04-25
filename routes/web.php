@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 Route::view('/home', 'home');
+Route::get('/health/{key}', 'HealthController@index')->name('health');
 
 
 Route::group(['prefix' => 'admin'], function () {

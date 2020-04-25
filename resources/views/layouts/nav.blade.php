@@ -19,8 +19,9 @@
             Health
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="{{route('home')}}">Common Diseases</a>
-            <a class="dropdown-item" href="{{route('home')}}">Feminine Diseases</a>
+            @foreach (App\HealthCategory::all() as $category)
+              <a class="dropdown-item" href="{{route('health', $category->key)}}">{{$category->name}}</a>
+            @endforeach
           </div>
         </li>
         <li class="nav-item dropdown">
