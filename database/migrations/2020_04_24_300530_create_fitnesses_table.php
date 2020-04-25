@@ -16,6 +16,7 @@ class CreateFitnessesTable extends Migration
     Schema::create('fitnesses', function (Blueprint $table) {
       $table->id();
       $table->string('name');
+      $table->string('slug');
       $table->unsignedInteger('category_id');
       $table->string('video');
       $table->longtext('description');

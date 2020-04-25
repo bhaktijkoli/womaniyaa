@@ -15,4 +15,13 @@ class HealthController extends Controller
       'posts' => $posts,
     ]);
   }
+  public function show($key, $slug, Request $request)
+  {
+    $post = \App\Health::where('slug', $slug)->firstOrFail();
+    $category = $post->category;
+    return view('health.show')->with([
+      'category' => $category,
+      'post' => $post,
+    ]);
+  }
 }

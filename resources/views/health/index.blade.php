@@ -48,7 +48,7 @@
                   <h3 class="title-d">{{$post->name}}</h3>
                 </div>
                 <p class="content-d color-text-a">{{$post->description}}</p>
-                <a href="#">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="{{route('health.show', ['key' => $category->key, 'slug' => $post->slug])}}">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </div>
           @endforeach
