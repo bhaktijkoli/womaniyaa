@@ -22,6 +22,8 @@ Route::get('/fitness/{key}/{slug}', 'FitnessController@show')->name('fitness.sho
 Route::get('/food/{key}', 'FoodController@index')->name('food');
 Route::get('/food/{key}/{slug}', 'FoodController@show')->name('food.show');
 
+Route::get('/general-tip/{slug}', 'GeneralTipController@show')->name('tip.show');
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

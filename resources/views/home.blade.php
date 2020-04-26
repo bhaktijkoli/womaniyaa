@@ -20,62 +20,29 @@
         </div>
       </div>
       <div id="new-carousel" class="owl-carousel owl-theme">
-        <div class="carousel-item-c">
-          <div class="card-box-b card-shadow news-box">
-            <div class="img-box-b">
-              <img src="{{asset('img/yoga.jpg')}}" alt="" class="img-b img-fluid">
-            </div>
-            <div class="card-overlay">
-              <div class="card-header-b">
-                <div class="card-category-b">
-                  <a href="{{route('home')}}" class="category-b">Health</a>
+        @foreach (App\GeneralTip::all() as $tip)
+          @php
+            $image = "";
+            $images = json_decode($tip->images);
+            if(count($images)) {
+              $image = $images[0];
+            }
+          @endphp
+          <div class="carousel-item-c">
+            <div class="card-box-b card-shadow news-box">
+              <div class="img-box-b">
+                <img src="{{Voyager::image($image)}}" alt="" class="img-b img-fluid">
+              </div>
+              <div class="card-overlay">
+                <div class="card-header-b">
+                  <div class="card-category-b">
+                    <a href="{{route('tip.show', $tip->slug)}}" class="category-b">{{$tip->name}}</a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="carousel-item-c">
-          <div class="card-box-b card-shadow news-box">
-            <div class="img-box-b">
-              <img src="{{asset('img/yoga.jpg')}}" alt="" class="img-b img-fluid">
-            </div>
-            <div class="card-overlay">
-              <div class="card-header-b">
-                <div class="card-category-b">
-                  <a href="{{route('home')}}" class="category-b">Fitness</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item-c">
-          <div class="card-box-b card-shadow news-box">
-            <div class="img-box-b">
-              <img src="{{asset('img/yoga.jpg')}}" alt="" class="img-b img-fluid">
-            </div>
-            <div class="card-overlay">
-              <div class="card-header-b">
-                <div class="card-category-b">
-                  <a href="{{route('home')}}" class="category-b">Food</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item-c">
-          <div class="card-box-b card-shadow news-box">
-            <div class="img-box-b">
-              <img src="{{asset('img/yoga.jpg')}}" alt="" class="img-b img-fluid">
-            </div>
-            <div class="card-overlay">
-              <div class="card-header-b">
-                <div class="card-category-b">
-                  <a href="{{route('home')}}" class="category-b">Yoga</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        @endforeach
       </div>
     </div>
   </section>
