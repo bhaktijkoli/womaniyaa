@@ -64,8 +64,11 @@
         </li>
       </ul>
     </div>
-    <button type="button" class="btn btn-b-n d-none d-md-block" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-expanded="false">
-      <i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login
-    </button>
+    @if (Auth::check())
+    @else
+      <a href="{{route('login')}}" class="btn btn-b-n d-none d-md-block">
+        <i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login
+      </a>
+    @endif
   </div>
 </nav>

@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'home')->name('home');
 Route::view('/home', 'home');
+Route::view('/login', 'login')->name('login');
+Route::view('/register', 'register')->name('register');
 Route::get('/health/{key}', 'HealthController@index')->name('health');
 Route::get('/health/{key}/{slug}', 'HealthController@show')->name('health.show');
 Route::get('/fitness/{key}', 'FitnessController@index')->name('fitness');

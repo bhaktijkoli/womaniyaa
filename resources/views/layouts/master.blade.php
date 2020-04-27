@@ -11,6 +11,7 @@
   <link rel="stylesheet" type="text/css" href="/css/ionicons.min.css"/>
   <link rel="stylesheet" type="text/css" href="/css/owl.carousel.min.css"/>
   <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+  @livewireStyles
   <link rel="icon" type="image/png" href="/images/logo.png" />
   @yield('css')
 </head>
@@ -24,6 +25,7 @@
   <script src="/js/owl.carousel.min.js"></script>
   <script src="/js/scrollreveal.min.js"></script>
   <script src="/js/main.js"></script>
+  @livewireScripts
   @yield('js')
 </body>
 </html>
