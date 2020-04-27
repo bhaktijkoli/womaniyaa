@@ -65,6 +65,14 @@
       </ul>
     </div>
     @if (Auth::check())
+      <div class="dropdown">
+        <a class="nav-link dropdown-toggle" href="#"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <img class="rounded-circle" width="42"src="{{Voyager::image(Auth::user()->avatar)}}"/>&nbsp;&nbsp;{{Auth::user()->name}}
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{{route('logout')}}">Logout</a>
+        </div>
+      </div>
     @else
       <a href="{{route('login')}}" class="btn btn-b-n d-none d-md-block">
         <i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;Login

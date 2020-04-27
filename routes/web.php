@@ -26,6 +26,10 @@ Route::get('/food/{key}/{slug}', 'FoodController@show')->name('food.show');
 
 Route::get('/general-tip/{slug}', 'GeneralTipController@show')->name('tip.show');
 
+Route::get('/logout', function() {
+  Auth::logout();
+  return redirect()->route('home');
+})->name('logout');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
