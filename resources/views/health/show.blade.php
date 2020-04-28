@@ -60,6 +60,7 @@
             <h4 class="title-d">Remedies</h4>
           </div>
           {{$post->remedies}}
+          @livewire('comments', ['post' => $post])
         </div>
       </div>
     </div>
