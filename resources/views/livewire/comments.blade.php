@@ -18,11 +18,27 @@
           </div>
         </li>
       @endforeach
+      <li>
+        @if (Auth::check())
+          <div class="comment-avatar">
+            <img src="{{Voyager::image(Auth::user()->avatar)}}" alt="{{Auth::user()->name}}">
+          </div>
+          <div class="comment-details" style="width:100%">
+            <h4 class="comment-author">{{Auth::user()->name}}</h4>
+            <div class="form">
+              <div class="form-group">
+                <textarea wire:model="message" class="form-control form-control-a" style="height:10rem">
+                </textarea>
+              </div>
+            </div>
+            <button class="btn btn-b" wire:click="comment">Post Comment</button>
+          </div>
+        @else
+          <div class="text-center">
+            <a href="{{route('login')}}" class="btn btn-b" wire:click="comment">Login</a>
+          </div>
+        @endif
+      </li>
     </ul>
   </div>
-  <div class="form-group">
-    <textarea wire:model="message" class="form-control">
-    </textarea>
-  </div>
-  <button class="btn btn-primary" wire:click="comment">Post Comment</button>
 </div>
