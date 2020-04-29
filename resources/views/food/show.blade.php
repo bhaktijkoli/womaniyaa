@@ -60,6 +60,7 @@
             <h4 class="title-d">Special Precautions</h4>
           </div>
           {{$post->precautions}}
+          @livewire('comments', ['post' => $post])
         </div>
       </div>
     </div>

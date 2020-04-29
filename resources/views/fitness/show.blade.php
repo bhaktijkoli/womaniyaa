@@ -55,6 +55,7 @@
             <h4 class="title-d">Benefits</h4>
           </div>
           {{$post->benefits}}
+          @livewire('comments', ['post' => $post])
         </div>
       </div>
     </div>

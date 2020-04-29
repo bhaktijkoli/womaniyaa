@@ -9,7 +9,9 @@
         <div class="col-sm-6 col-lg-6">
           <div class="card">
             <div class="card-body">
-              <h3>Login</h3>
+              <div class="title-box-d">
+                <h3 class="title-d">Login</h3>
+              </div>
               @livewire('login-form')
             </div>
           </div>

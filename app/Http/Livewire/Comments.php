@@ -24,6 +24,7 @@ class Comments extends Component
   public function comment()
   {
     auth()->user()->comment($this->post, $this->message, 0);
+    $this->comments = $this->post->comments;
     $this->message = "";
   }
 }
