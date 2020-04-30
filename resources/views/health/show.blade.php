@@ -47,19 +47,27 @@
           <div class="title-box-d mt-5">
             <h4 class="title-d">Description</h4>
           </div>
-          {{$post->description}}
+          <div class="unescaped">
+            {!!$post->description!!}
+          </div>
           <div class="title-box-d mt-3">
             <h4 class="title-d">Precautions</h4>
           </div>
-          {{$post->precautions}}
+          <div class="unescaped">
+            {!!$post->precautions!!}
+          </div>
           <div class="title-box-d mt-3">
             <h4 class="title-d">Symptoms</h4>
           </div>
-          {{$post->symptoms}}
+          <div class="unescaped">
+            {!!$post->symptoms!!}
+          </div>
           <div class="title-box-d mt-3">
             <h4 class="title-d">Remedies</h4>
           </div>
-          {{$post->remedies}}
+          <div class="unescaped">
+            {!!$post->remedies!!}
+          </div>
           @livewire('comments', ['post' => $post])
         </div>
       </div>

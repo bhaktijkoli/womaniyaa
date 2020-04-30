@@ -46,7 +46,7 @@
                 <div class="title-box-d">
                   <h3 class="title-d">{{$post->name}}</h3>
                 </div>
-                <p class="content-d color-text-a">{{$post->description}}</p>
+                <p class="content-d color-text-a">{{strip_tags($post->description)}}</p>
                 <a href="{{route('fitness.show', ['key' => $category->key, 'slug' => $post->slug])}}">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </div>

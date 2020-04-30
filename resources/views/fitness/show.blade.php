@@ -46,15 +46,21 @@
           <div class="title-box-d mt-5">
             <h4 class="title-d">Description</h4>
           </div>
-          {{$post->description}}
+          <div class="unescaped">
+            {!!$post->description!!}
+          </div>
           <div class="title-box-d mt-3">
             <h4 class="title-d">Steps</h4>
           </div>
-          {{$post->steps}}
+          <div class="unescaped">
+            {!!$post->steps!!}
+          </div>
           <div class="title-box-d mt-3">
             <h4 class="title-d">Benefits</h4>
           </div>
-          {{$post->benefits}}
+          <div class="unescaped">
+            {!!$post->benefits!!}
+          </div>
           @livewire('comments', ['post' => $post])
         </div>
       </div>
