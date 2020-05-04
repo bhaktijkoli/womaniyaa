@@ -26,6 +26,13 @@
   <script src="/js/scrollreveal.min.js"></script>
   <script src="/js/main.js"></script>
   @livewireScripts
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+  intent="WELCOME"
+  chat-title="Womaniyaa"
+  agent-id="4ccd1726-09f0-4ea4-a5c0-4e3026e39eb4"
+  language-code="en"
+  ></df-messenger>
   @yield('js')
 </body>
 </html>
