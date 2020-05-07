@@ -47,7 +47,7 @@
                 <div class="title-box-d">
                   <h3 class="title-d">{{$post->name}}</h3>
                 </div>
-                <p class="content-d color-text-a">{{strip_tags($post->description)}}</p>
+                <p class="content-d color-text-a">{{Str::limit(strip_tags($post->description), 40)}}</p>
                 <a href="{{route('food.show', ['key' => $category->key, 'slug' => $post->slug])}}">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </div>
