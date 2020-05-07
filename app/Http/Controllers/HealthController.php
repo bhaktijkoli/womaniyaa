@@ -9,13 +9,13 @@ class HealthController extends Controller
   public function index($key, Request $request)
   {
     $category = \App\HealthCategory::where('key', $key)->firstOrFail();
-    $posts = \App\Health::where('category_id', $category->id)->get();
+    $posts = \App\Health::where('category_id', $category->id)->paginate(5);
     return view('health.index')->with([
       'category' => $category,
       'posts' => $posts,
     ]);
   }
-  
+
   public function show($key, $slug, Request $request)
   {
     $post = \App\Health::where('slug', $slug)->firstOrFail();
