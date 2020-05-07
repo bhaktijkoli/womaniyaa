@@ -34,3 +34,7 @@ Route::get('/logout', function() {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
+
+ROute::get('/test', function() {
+  return json_decode('{ "fulfillmentMessages": [ { "text": { "text": [ "Text response from webhook" ] } } ] }');
+});
