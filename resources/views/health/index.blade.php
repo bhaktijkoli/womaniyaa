@@ -53,6 +53,9 @@
             </div>
           @endforeach
         </div>
+        <div class="col-sm-12">
+          {{$posts->links()}}
+        </div>
       </div>
     </div>
   </section>
