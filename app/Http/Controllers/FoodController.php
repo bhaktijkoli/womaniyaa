@@ -9,7 +9,7 @@ class FoodController extends Controller
   public function index($key, Request $request)
   {
     $category = \App\FoodCategory::where('key', $key)->firstOrFail();
-    $posts = \App\Food::where('category_id', $category->id)->get();
+    $posts = \App\Food::where('category_id', $category->id)->paginate(5);
     return view('food.index')->with([
       'category' => $category,
       'posts' => $posts,
