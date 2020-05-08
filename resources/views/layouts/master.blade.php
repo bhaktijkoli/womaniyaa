@@ -30,6 +30,7 @@
   <df-messenger
   intent="WELCOME"
   chat-title="Womaniyaa"
+  chat-icon="{{asset('/img/chat_logo.png')}}"
   agent-id="4ccd1726-09f0-4ea4-a5c0-4e3026e39eb4"
   language-code="en"
   ></df-messenger>
