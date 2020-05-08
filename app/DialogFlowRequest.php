@@ -11,6 +11,7 @@ class DialogFlowRequest {
   public $session;
   public $queryResult;
   public $parameters;
+  public $intentName;
 
   public function __construct(Request $request)
   {
@@ -19,6 +20,7 @@ class DialogFlowRequest {
     $this->session = $request->input('session');
     $this->queryResult = $request->input('queryResult');
     $this->parameters = $this->queryResult['parameters'];
+    $this->intentName = $this->queryResult['intent']['displayName'];
   }
 
 }
