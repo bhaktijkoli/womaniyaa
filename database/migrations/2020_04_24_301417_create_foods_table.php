@@ -18,7 +18,7 @@ class CreateFoodsTable extends Migration
       $table->string('name');
       $table->string('slug');
       $table->unsignedInteger('category_id');
-      $table->string('image');
+      $table->string('video');
       $table->longtext('description');
       $table->longtext('requirements')->nullable();
       $table->longtext('methods')->nullable();
