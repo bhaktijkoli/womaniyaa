@@ -19,10 +19,9 @@ class CreateFoodsTable extends Migration
       $table->string('slug');
       $table->unsignedInteger('category_id');
       $table->string('video');
-      $table->longtext('description');
-      $table->longtext('requirements')->nullable();
-      $table->longtext('methods')->nullable();
-      $table->longtext('precautions')->nullable();
+      $table->longtext('food_groups');
+      $table->longtext('recipes')->nullable();
+      $table->longtext('tips')->nullable();
       $table->timestamps();
     });
   }

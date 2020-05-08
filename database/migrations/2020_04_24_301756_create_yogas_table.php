@@ -18,7 +18,9 @@ class CreateYogasTable extends Migration
       $table->string('name');
       $table->string('slug');
       $table->unsignedInteger('category_id');
+      $table->string('video');
       $table->longtext('description');
+      $table->longtext('benefits')->nullable();
       $table->timestamps();
     });
   }

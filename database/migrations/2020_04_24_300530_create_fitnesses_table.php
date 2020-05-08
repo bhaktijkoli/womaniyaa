@@ -20,7 +20,6 @@ class CreateFitnessesTable extends Migration
       $table->unsignedInteger('category_id');
       $table->string('video');
       $table->longtext('description');
-      $table->longtext('steps')->nullable();
       $table->longtext('benefits')->nullable();
       $table->timestamps();
     });

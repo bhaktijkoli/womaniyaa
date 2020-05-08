@@ -44,28 +44,22 @@
         </div>
         <div class="col-sm-8 offset-sm-2">
           <div class="title-box-d mt-5">
-            <h4 class="title-d">Description</h4>
+            <h4 class="title-d">Food groups to Consume</h4>
           </div>
           <div class="unescaped">
-            {!!$post->description!!}
+            {!!$post->food_groups!!}
           </div>
           <div class="title-box-d mt-3">
-            <h4 class="title-d">Requirements</h4>
+            <h4 class="title-d">Recipes</h4>
           </div>
           <div class="unescaped">
-            {!!$post->requirements!!}
+            {!!$post->recipes!!}
           </div>
           <div class="title-box-d mt-3">
-            <h4 class="title-d">Methods</h4>
+            <h4 class="title-d">Tips</h4>
           </div>
           <div class="unescaped">
-            {!!$post->methods!!}
-          </div>
-          <div class="title-box-d mt-3">
-            <h4 class="title-d">Special Precautions</h4>
-          </div>
-          <div class="unescaped">
-            {!!$post->precautions!!}
+            {!!$post->tips!!}
           </div>
           @livewire('comments', ['post' => $post])
         </div>

@@ -50,12 +50,6 @@
             {!!$post->description!!}
           </div>
           <div class="title-box-d mt-3">
-            <h4 class="title-d">Steps</h4>
-          </div>
-          <div class="unescaped">
-            {!!$post->steps!!}
-          </div>
-          <div class="title-box-d mt-3">
             <h4 class="title-d">Benefits</h4>
           </div>
           <div class="unescaped">
