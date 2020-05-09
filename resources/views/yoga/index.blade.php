@@ -38,7 +38,7 @@
             @php
             $video_id = '';
             $video = explode("?v=", $post->video);
-            if(count($video) > 1) {
+            if(count($video) >= 1) {
               $video_id = $video[1];
             }
             @endphp
@@ -51,7 +51,7 @@
                   <h3 class="title-d">{{$post->name}}</h3>
                 </div>
                 <p class="content-d color-text-a">{{Str::limit(strip_tags($post->description), 200)}}</p>
-                <a href="{{route('fitness.show', ['key' => $category->key, 'slug' => $post->slug])}}">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                <a href="{{route('yoga.show', ['key' => $category->key, 'slug' => $post->slug])}}">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </div>
           @endforeach
