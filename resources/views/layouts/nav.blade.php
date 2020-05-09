@@ -49,14 +49,9 @@
             Yoga
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="{{route('home')}}">Flexibility</a>
-            <a class="dropdown-item" href="{{route('home')}}">Stress Reduction</a>
-            <a class="dropdown-item" href="{{route('home')}}">Digestion</a>
-            <a class="dropdown-item" href="{{route('home')}}">Balance</a>
-            <a class="dropdown-item" href="{{route('home')}}">Strength</a>
-            <a class="dropdown-item" href="{{route('home')}}">Body Alignment</a>
-            <a class="dropdown-item" href="{{route('home')}}">Concentration</a>
-            <a class="dropdown-item" href="{{route('home')}}">Meditation</a>
+            @foreach (App\YogaCategory::all() as $category)
+              <a class="dropdown-item" href="{{route('yoga', $category->key)}}">{{$category->name}}</a>
+            @endforeach
           </div>
         </li>
         <li class="nav-item">
