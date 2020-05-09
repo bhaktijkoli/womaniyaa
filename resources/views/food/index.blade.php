@@ -36,7 +36,10 @@
         <div class="col-sm-12">
           @foreach ($posts as $post)
             @php
-            $video_id = explode("?v=", $post->video)[1];
+            $video_id = '';
+            if($post->video) {
+              $video_id = explode("?v=", $post->video)[1];
+            }
             @endphp
             <div class="row mb-5 foo">
               <div class="col-sm-6">

@@ -36,8 +36,10 @@
         <div class="col-sm-12">
           @foreach ($posts as $post)
             @php
-            $video_id = explode("?v=", $post->video)[1];
-            @endphp
+            $video_id = '';
+            if($post->video) {
+              $video_id = explode("?v=", $post->video)[1];
+            }            @endphp
             <div class="row mb-5 foo">
               <div class="col-sm-6">
               <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$video_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

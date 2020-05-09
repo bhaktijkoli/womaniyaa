@@ -38,8 +38,10 @@
       <div class="row">
         <div class="col-sm-8 offset-sm-2">
           @php
-          $video_id = explode("?v=", $post->video)[1];
-          @endphp
+          $video_id = '';
+          if($post->video) {
+            $video_id = explode("?v=", $post->video)[1];
+          }          @endphp
           <iframe width="100%" height="350px" src="https://www.youtube.com/embed/{{$video_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="col-sm-8 offset-sm-2">
