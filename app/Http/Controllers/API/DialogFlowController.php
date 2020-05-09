@@ -38,7 +38,7 @@ class DialogFlowController extends Controller
           array(
             'type' => 'button',
             'text' => 'Read More',
-            'link' => route('health.show', $health->id),
+            'link' => route('health.show', ['key' => $health->category->key, 'slug' => $health->slug]),
           )
         );
       } else {
