@@ -34,6 +34,11 @@ class DialogFlowController extends Controller
           array(
             'type' => 'info',
             'title' => strip_tags($health->remedies),
+          ),
+          array(
+            'type' => 'button',
+            'text' => 'Read More',
+            'link' => route('health.show', $health->id),
           )
         );
       } else {
