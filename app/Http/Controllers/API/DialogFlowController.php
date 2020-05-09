@@ -41,7 +41,7 @@ class DialogFlowController extends Controller
             'icon' => array(
               'type' => '',
               'color' => '#FF9800',
-            )
+            ),
             'link' => route('health.show', ['key' => $health->category->key, 'slug' => $health->slug]),
           )
         );
