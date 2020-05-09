@@ -37,18 +37,20 @@
           @foreach ($posts as $post)
             @php
             $video_id = '';
-            if($post->video) {
-              $video_id = explode("?v=", $post->video)[1];
-            }            @endphp
+            $video = explode("?v=", $post->video);
+            if(count($video) > 1) {
+              $video_id = $video[1];
+            }
+            @endphp
             <div class="row mb-5 foo">
               <div class="col-sm-6">
-              <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$video_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{{$video_id}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div class="col-sm-6">
                 <div class="title-box-d">
                   <h3 class="title-d">{{$post->name}}</h3>
                 </div>
-                <p class="content-d color-text-a">{{strip_tags($post->description)}}</p>
+                <p class="content-d color-text-a">{{Str::limit(strip_tags($post->description), 200)}}</p>
                 <a href="{{route('fitness.show', ['key' => $category->key, 'slug' => $post->slug])}}">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
               </div>
             </div>
