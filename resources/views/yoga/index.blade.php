@@ -38,7 +38,7 @@
             @php
             $video_id = '';
             $video = explode("?v=", $post->video);
-            if(count($video) >= 1) {
+            if(count($video) > 1) {
               $video_id = $video[1];
             }
             @endphp
