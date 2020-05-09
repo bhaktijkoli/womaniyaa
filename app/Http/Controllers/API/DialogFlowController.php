@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 use App\DialogFlowRequest;
 use App\Health;
+use App\DietPlan;
+use Voyager;
 use Log;
 
 class DialogFlowController extends Controller
@@ -15,18 +17,60 @@ class DialogFlowController extends Controller
   {
     $dr = new DialogFlowRequest($request);
     $parameters = $dr->parameters;
-    $symptom = $parameters['symptom1'];
+    $message = array();
+    if($dr->intentName == 'Diagnosis Result') {
+      $symptom = $parameters['symptom1'];
+      $health = Health::where('slug', $symptom)->first();
+      if($health) {
+        $message = array(
+          array(
+            'type' => 'image',
+            'rawUrl' => Voyager::image($health->image),
+          ),
+          array(
+            'type' => 'info',
+            'title' => "You may have $health->name."
+          ),
+          array(
+            'type' => 'info',
+            'title' => strip_tags($health->remedies),
+          )
+        );
+      } else {
+        $message = array(
+          array(
+            'type' => 'info',
+            'title' => "You were not able to findout."
+          )
+        );
+      }
+    }
+    else {
+      $age = $parameters['age'];
+      $plan = DietPlan::where('max_age', '>=', $age)->where('min_age', '<=', $age)->first();
+      if($plan) {
+        $message = array(
+          array(
+            'type' => 'image',
+            'rawUrl' => Voyager::image($plan->image),
+          )
+        );
+      } else {
+        $message = array(
+          array(
+            'type' => 'info',
+            'title' => "You were not able to find for $age."
+          )
+        );
+      }
+    }
+
     $data = array(
       'fulfillmentMessages' => array(
         array(
           'payload' => array(
             'richContent' => array(
-              array(
-                array(
-                  'type' => 'info',
-                  'title' => "You may have $symptom",
-                )
-              )
+              $message
             )
           )
         )
