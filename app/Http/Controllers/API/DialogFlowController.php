@@ -18,7 +18,7 @@ class DialogFlowController extends Controller
     $dr = new DialogFlowRequest($request);
     $parameters = $dr->parameters;
     $message = array();
-    if($dr->intentName == 'Diagnosis Result') {
+    if($dr->intentName == 'Diagnosis Result' || $dr->intentName == 'Diagnosis Symptom 3') {
       $symptom = $parameters['symptom1'];
       $health = Health::where('slug', $symptom)->first();
       if($health) {
