@@ -50,7 +50,7 @@
           <blockquote class="blockquote text-center">
             A Healthy Body holds a Healthy Soul and Mind</blockquote>
           </div>
-          <div class="col-sm-12" style="margin-top:20px">
+          <div class="col-sm-12" style="margin-top:20px; margin-bottom: 100px;">
             <div class="title-box-d">
               <h3 class="title-d">Welcome to Womaniyaa</h3>
             </div>
@@ -59,6 +59,83 @@
             </p>
           </div>
         </div>
+        <div class="row" style="margin-top:20px;">
+          <div class="col-sm-4">
+            <img src="{{asset('img/tejashree-patil.jpg')}}" style="width: inherit;"/>
+          </div>
+          <div class="col-sm-8">
+            <div style="margin-top:20px">
+              <h4>Tejashree Vijay Patil</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+              <div class="testimonial-ico" style="margin-top:20px">
+                <span class="ion-ios-quote"></span>
+              </div>
+              <blockquote class="blockquote" style="text-align: center; background: #f3f3f3; padding: 20px; border-radius: 8px; font-style: italic; margin-top: 10px; min-height:80px">
+                When we do the best we can, we never know what miracle is wrought in our life, or in the life of another."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="margin-top:100px;">
+          <div class="col-sm-8">
+            <div style="margin-top:20px">
+              <h4>Bhakti Rijhwani</h4>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    <i class="fa fa-instagram" aria-hidden="true"></i>
+                  </a>
+                </li>
+              </ul>
+              <div class="testimonial-ico" style="margin-top:20px">
+                <span class="ion-ios-quote"></span>
+              </div>
+              <blockquote class="blockquote" style="text-align: center; background: #f3f3f3; padding: 20px; border-radius: 8px; font-style: italic; margin-top: 10px; min-height:80px">
+                If you obey all the rules, you miss all the fun.
+              </blockquote>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <img src="{{asset('img/bhakti-rijhwani.jpg')}}" style="width: inherit;"/>
+          </div>
+        </div>
       </div>
-    </section>
-  @endsection
+    </div>
+  </section>
+@endsection
