@@ -22,11 +22,11 @@
       <div id="new-carousel" class="owl-carousel owl-theme">
         @foreach (App\GeneralTip::all() as $tip)
           @php
-            $image = "";
-            $images = json_decode($tip->images);
-            if(count($images)) {
-              $image = $images[0];
-            }
+          $image = "";
+          $images = json_decode($tip->images);
+          if(count($images)) {
+            $image = $images[0];
+          }
           @endphp
           <div class="carousel-item-c">
             <div class="card-box-b card-shadow news-box">
@@ -43,6 +43,53 @@
             </div>
           </div>
         @endforeach
+      </div>
+    </div>
+  </section>
+  <section class="section-thoughts section-t8">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title-wrap d-flex justify-content-between">
+            <div class="title-box">
+              <h2 class="title-a">Thoughts</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="testimonial-ico">
+            <span class="ion-ios-quote"></span>
+          </div>
+          <blockquote class="blockquote" style="text-align: center; background: #f3f3f3; padding: 20px; border-radius: 8px; font-style: italic; margin-top: 10px;">
+            Don't let sickness, depression, and disease THUG YOU OUT. Eat healthier, think healthier, speak healthier, and more positively over your life. When you do so, you will soon begin to conquer your life and your health through new found empowerment- mind, body, and spirit.
+          </blockquote>
+        </div>
+        <div class="col-sm-3">
+          <div class="testimonial-ico">
+            <span class="ion-ios-quote"></span>
+          </div>
+          <blockquote class="blockquote" style="text-align: center; background: #f3f3f3; padding: 20px; border-radius: 8px; font-style: italic; margin-top: 10px;">
+            Your body is a Temple. You are what you eat. Do not eat processed food, junk foods, filth, or disease carrying food, animals, or rodents.
+          </blockquote>
+        </div>
+        <div class="col-sm-3">
+          <div class="testimonial-ico">
+            <span class="ion-ios-quote"></span>
+          </div>
+          <blockquote class="blockquote" style="text-align: center; background: #f3f3f3; padding: 20px; border-radius: 8px; font-style: italic; margin-top: 10px;">
+            What seems impossible today will one day become your warm-up. The PAIN you today will be the STRENGTH you need tomorrow
+          </blockquote>
+        </div>
+        <div class="col-sm-3">
+          <div class="testimonial-ico">
+            <span class="ion-ios-quote"></span>
+          </div>
+          <blockquote class="blockquote" style="text-align: center; background: #f3f3f3; padding: 20px; border-radius: 8px; font-style: italic; margin-top: 10px;">
+            Yoga is the journey of the self, through the self, to the self.
+          </blockquote>
+        </div>
       </div>
     </div>
   </section>
