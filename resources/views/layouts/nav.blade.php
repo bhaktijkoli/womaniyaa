@@ -55,7 +55,7 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{route('home')}}">About Us</a>
+          <a class="nav-link" href="{{route('aboutus')}}">About Us</a>
         </li>
       </ul>
     </div>
