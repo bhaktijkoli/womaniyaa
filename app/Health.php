@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Actuallymab\LaravelComment\Contracts\Commentable;
 use Actuallymab\LaravelComment\HasComments;
+use Jcc\LaravelVote\CanBeVoted;
 
 class Health extends Model implements Commentable
 {
-  use HasComments;
+  use HasComments, CanBeVoted;
+
+  protected $vote = User::class;
 
   public function category()
   {

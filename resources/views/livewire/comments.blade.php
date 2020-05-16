@@ -1,3 +1,14 @@
+@if (auth()->check())
+  @if (auth()->user()->hasVoted($post))
+    <div class="likes" style="font-size:24px;color:blue">
+      {{$post->countUpVoters()}}&nbsp;&nbsp;<i wire:click="doUnLike" class="fa fa-thumbs-up" aria-hidden="true"></i>
+    </div>
+  @else
+    <div class="likes" style="font-size:24px;">
+      {{$post->countUpVoters()}}&nbsp;&nbsp;<i wire:click="doLike" class="fa fa-thumbs-up" aria-hidden="true"></i>
+    </div>
+  @endif
+@endif
 <div class="comments">
   <div class="title-box-d mt-3">
     <h4 class="title-d">Comments({{count($comments)}})</h4>

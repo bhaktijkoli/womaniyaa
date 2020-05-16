@@ -16,6 +16,16 @@ class Comments extends Component
     $this->comments = $post->comments;
   }
 
+  public function doLike()
+  {
+    auth()->user()->upVote($this->post);
+  }
+
+  public function doUnLike()
+  {
+    auth()->user()->cancelVote($this->post);
+  }
+
   public function render()
   {
     return view('livewire.comments');

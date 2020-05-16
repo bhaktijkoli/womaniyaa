@@ -6,10 +6,11 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Actuallymab\LaravelComment\CanComment;
+use Jcc\LaravelVote\Vote;
 
 class User extends \TCG\Voyager\Models\User
 {
-    use Notifiable, CanComment;
+    use Notifiable, CanComment, Vote;
 
     /**
      * The attributes that are mass assignable.
