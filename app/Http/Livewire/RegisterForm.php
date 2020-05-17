@@ -20,9 +20,9 @@ class RegisterForm extends Component
   public function submit()
   {
     $this->validate([
-      'name' => 'required|min:2',
-      'email' => 'required|min:4',
-      'password' => 'required|min:4',
+      'name' => 'required|min:4',
+      'email' => 'required|unique:users,email',
+      'password' => 'required|min:8',
     ]);
 
     $user = User::create([
