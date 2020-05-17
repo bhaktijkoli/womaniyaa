@@ -107,7 +107,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom:50px">
           @php
           $post = App\Health::join('votes', 'votes.votable_id', 'healths.id')->where('votes.votable_type', 'App\Health')->first();
           if(!$post) {
@@ -129,7 +129,7 @@
             <a href="{{route('health.show', ['key' => $post->category->key, 'slug' => $post->slug])}}">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom:50px">
           @php
           $post = App\Food::join('votes', 'votes.votable_id', 'foods.id')->where('votes.votable_type', 'App\Food')->first();
           if(!$post) {
@@ -152,7 +152,7 @@
             <a href="{{route('food.show', ['key' => $post->category->key, 'slug' => $post->slug])}}">Read More <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom:50px">
           @php
           $post = App\Fitness::join('votes', 'votes.votable_id', 'fitnesses.id')->where('votes.votable_type', 'App\Fitness')->first();
           if(!$post) {
@@ -177,7 +177,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row" style="margin-bottom:50px">
           @php
           $post = App\Yoga::join('votes', 'votes.votable_id', 'yogas.id')->where('votes.votable_type', 'App\Yoga')->first();
           if(!$post) {
