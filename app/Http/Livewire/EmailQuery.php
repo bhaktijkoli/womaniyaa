@@ -30,7 +30,7 @@ class EmailQuery extends Component
     $this->validate([
       'query' => 'required',
     ]);
-    Notification::route('mail', 'patiltejashree2107@gmail.com')->notify(new QueryNotification($this->email, $this->query));
+    Notification::route('mail', 'madhura.patil0404@gmail.com')->notify(new QueryNotification($this->email, $this->query));
     $this->email = "";
     $this->query = "";
     $this->isMailSubmitted = false;
