@@ -26,13 +26,10 @@
         <nav class="nav-footer">
           <ul class="list-inline">
             <li class="list-inline-item">
-              <a href="#">Home</a>
+              <a href="{{route('home')}}">Home</a>
             </li>
             <li class="list-inline-item">
-              <a href="#">About</a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">Team</a>
+              <a href="{{route('aboutus')}}">About</a>
             </li>
           </ul>
         </nav>

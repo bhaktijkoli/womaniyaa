@@ -73,17 +73,17 @@
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.facebook.com/profile.php?id=100010048412537">
                     <i class="fa fa-facebook" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://twitter.com/Tejashree170704">
                     <i class="fa fa-twitter" aria-hidden="true"></i>
                   </a>
                 </li>
                 <li class="list-inline-item">
-                  <a href="#">
+                  <a href="https://www.instagram.com/tigerkitty1774/">
                     <i class="fa fa-instagram" aria-hidden="true"></i>
                   </a>
                 </li>
