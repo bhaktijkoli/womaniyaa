@@ -6,7 +6,7 @@
   @else
     <div class="form-group">
       <label for="name">Name</label>
-      <input wire:model="name" type="text" class="form-control form-control-a" placeholder="Enter email">
+      <input wire:model="name" type="text" class="form-control form-control-a" placeholder="Enter name">
       @error('name')
         <div class="validate" style="display:block">{{ $message }}</div>
       @enderror

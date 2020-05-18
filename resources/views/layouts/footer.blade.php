@@ -2,17 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-8 section-md-t3">
-        <form class="form">
-          <div class="row">
-            <div class="form-group col-sm-8">
-              <label for="email">Email</label>
-              <input wire:model="email" type="text" class="form-control form-control-a" placeholder="Enter email">
-            </div>
-            <div class="col-sm-4">
-              <button type="submit" class="btn btn-b btn-block" style="margin-top:30px">Get Started</button>
-            </div>
-          </div>
-        </form>
+        @livewire('email-query')
       </div>
       <div class="col-sm-12 col-md-4">
         <div class="widget-a" style="margin-top:20px">
@@ -61,16 +51,6 @@
             <li class="list-inline-item">
               <a href="#">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-pinterest-p" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#">
-                <i class="fa fa-dribbble" aria-hidden="true"></i>
               </a>
             </li>
           </ul>
