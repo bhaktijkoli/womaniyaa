@@ -39,9 +39,29 @@ class DietPlanIntentHandler extends IntentHandler
   {
     $response = new DialogflowResponse($request);
     $age = $request->parameters['age'];
-    $bmi = $request->parameters['bmi'];
+    if(isset($request->parameters['bmi'])) {
+      $bmi = $request->parameters['bmi'];
+    } else {
+      $height = $request->parameters['height'];
+      $weight = $request->parameters['weight'];
+      $bmi = $weight / ($height * $height);
+      $response->addData([
+        'type' => 'info',
+        'title' => "Your calculated bmi is $bmi"
+      ]);
+    }
+    $category = '';
+    foreach ($this->bmiData as $data) {
+      if($data['minAge'] <= $age && $data['maxAge'] >= $age && $data['minBMI'] <= $bmi && $data['maxBMI'] >= $bmi) {
+        $category = $data['name'];
+      }
+    }
     $plan = DietPlan::where('max_age', '>=', $age)->where('min_age', '<=', $age)->first();
     if($plan) {
+      $response->addData([
+        'type' => 'info',
+        'title' => "According to your age and bmi, you fall under $category category and you should follow the following plan",
+      ]);
       $response->addData([
         'type' => 'image',
         'rawUrl' => Voyager::image($plan->image),
