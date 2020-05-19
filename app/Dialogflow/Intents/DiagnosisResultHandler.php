@@ -22,54 +22,28 @@ class DiagnosisResultHandler extends IntentHandler
   {
     $response = new DialogflowResponse($request);
     $symptom = $request->parameters['symptom1'];
-    $health = Health::where('slug', $symptom)->first();
-    if($health) {
+    $healths = Health::where('symptoms', 'like', "%$symptom%");
+    if(isset($request->parameters['symptom2'])) {
+      $symptom = $request->parameters['symptom2'];
+      $healths = $healths->orWhere('symptoms', 'like', "%$symptom%");
+    }
+    if(isset($request->parameters['symptom3'])) {
+      $symptom = $request->parameters['symptom3'];
+      $healths = $healths->orWhere('symptoms', 'like', "%$symptom%");
+    }
+    $healths = $healths->get();
+    $response->addData([
+      'type' => 'info',
+      'title' => "Your diagnosis results",
+    ]);
+    foreach ($healths as $health) {
       $response->addData([
         'type' => 'info',
-        'title' => "Your Results"
+        'title' => $health->name,
+        'actionLink' => route('health.show', ['key' => $health->category->key, 'slug' => $health->slug]),
       ]);
       $response->addData([
-        'type' => 'image',
-        'rawUrl' => Voyager::image($health->image),
-      ])
-      ->addData([
-        'type' => 'info',
-        'title' => $health->name
-      ]);
-      if(isset($request->parameters['symptom2'])) {
-        $health2 = Health::where('slug', $request->parameters['symptom2'])->first();
-        if($health2) {
-          if($health2->id != $health->id) {
-            $response->addData([
-              'type' => 'image',
-              'rawUrl' => Voyager::image($health2->image),
-            ])
-            ->addData([
-              'type' => 'info',
-              'title' => $health2->name
-            ]);
-          }
-        }
-      }
-      if(isset($request->parameters['symptom3'])) {
-        $health3 = Health::where('slug', $request->parameters['symptom3'])->first();
-        if($health3) {
-          if($health3->id != $health->id && $health3->id != $health->id) {
-            $response->addData([
-              'type' => 'image',
-              'rawUrl' => Voyager::image($health3->image),
-            ])
-            ->addData([
-              'type' => 'info',
-              'title' => $health3->name
-            ]);
-          }
-        }
-      }
-    } else {
-      $response->addData([
-        'type' => 'info',
-        'title' => "We were not able to findout."
+        'type' => 'divider',
       ]);
     }
     return $response;
