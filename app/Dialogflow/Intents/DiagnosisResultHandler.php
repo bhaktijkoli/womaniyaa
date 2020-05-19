@@ -24,7 +24,7 @@ class DiagnosisResultHandler extends IntentHandler
     $symptom = $request->parameters['symptom1'];
     $health = Health::where('slug', $symptom)->first();
     if($health) {
-      ->addData([
+      $response->addData([
         'type' => 'info',
         'title' => "Your Results"
       ]);
@@ -37,28 +37,33 @@ class DiagnosisResultHandler extends IntentHandler
         'title' => $health->name
       ]);
       if(isset($request->parameters['symptom2'])) {
-        $health = Health::where('slug', $request->parameters['symptom2'])->first();
-        if($health) {
-          $response->addData([
-            'type' => 'image',
-            'rawUrl' => Voyager::image($health->image),
-          ])
-          ->addData([
-            'type' => 'info',
-            'title' => $health->name
-          ]);
+        $health2 = Health::where('slug', $request->parameters['symptom2'])->first();
+        if($health2) {
+          if($health2->id != $health->id) {
+            $response->addData([
+              'type' => 'image',
+              'rawUrl' => Voyager::image($health2->image),
+            ])
+            ->addData([
+              'type' => 'info',
+              'title' => $health2->name
+            ]);
+          }
         }
+      }
       if(isset($request->parameters['symptom3'])) {
-        $health = Health::where('slug', $request->parameters['symptom3'])->first();
-        if($health) {
-          $response->addData([
-            'type' => 'image',
-            'rawUrl' => Voyager::image($health->image),
-          ])
-          ->addData([
-            'type' => 'info',
-            'title' => $health->name
-          ]);
+        $health3 = Health::where('slug', $request->parameters['symptom3'])->first();
+        if($health3) {
+          if($health3->id != $health->id && $health3->id != $health->id) {
+            $response->addData([
+              'type' => 'image',
+              'rawUrl' => Voyager::image($health3->image),
+            ])
+            ->addData([
+              'type' => 'info',
+              'title' => $health3->name
+            ]);
+          }
         }
       }
     } else {
