@@ -24,14 +24,43 @@ class DiagnosisResultHandler extends IntentHandler
     $symptom = $request->parameters['symptom1'];
     $health = Health::where('slug', $symptom)->first();
     if($health) {
+      ->addData([
+        'type' => 'info',
+        'title' => "Your Results"
+      ]);
       $response->addData([
         'type' => 'image',
         'rawUrl' => Voyager::image($health->image),
       ])
       ->addData([
         'type' => 'info',
-        'title' => "You may have $health->name."
+        'title' => $health->name
       ]);
+      if(isset($request->parameters['symptom2'])) {
+        $health = Health::where('slug', $request->parameters['symptom2'])->first();
+        if($health) {
+          $response->addData([
+            'type' => 'image',
+            'rawUrl' => Voyager::image($health->image),
+          ])
+          ->addData([
+            'type' => 'info',
+            'title' => $health->name
+          ]);
+        }
+      if(isset($request->parameters['symptom3'])) {
+        $health = Health::where('slug', $request->parameters['symptom3'])->first();
+        if($health) {
+          $response->addData([
+            'type' => 'image',
+            'rawUrl' => Voyager::image($health->image),
+          ])
+          ->addData([
+            'type' => 'info',
+            'title' => $health->name
+          ]);
+        }
+      }
     } else {
       $response->addData([
         'type' => 'info',
