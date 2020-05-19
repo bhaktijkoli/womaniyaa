@@ -12,6 +12,8 @@ class Food extends Model implements Commentable
 {
   use HasComments, CanBeVoted;
 
+  protected $table = 'foods';
+
   protected $vote = User::class;
 
   public function category()
